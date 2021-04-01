@@ -1,0 +1,90 @@
+@import "./colors.less";
+
+.dish-page {
+    height: 100%;
+    width: 95%;
+
+
+    .dish-tab-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background: transparent;
+
+        .ant-card-head {
+            background: transparent;
+            border-bottom: none;
+            margin-bottom: -1px;
+
+            padding: 0 10px;
+            margin: 0 14px;
+
+            .ant-card-head-title {
+                height: 55px;
+                padding: 0;
+            }
+
+            .dish-tabs {
+                width: 100%;
+                height: 55px;
+
+                .ant-tabs-nav {
+                    margin: 0;
+                    height: 55px;
+
+                    .ant-tabs-nav-list {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: flex-end;
+                    }
+
+                    .ant-tabs-tab {
+                        margin: 0 5px;
+                        padding: 7px 20px;
+                        height: 45px;
+                        border-radius: 7px 7px 0 0;
+                        background: @grey-2;
+                        border: none;
+
+                        -webkit-box-shadow: inset 0px -33px 25px -30px @grey-4;
+                        /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+                        -moz-box-shadow: inset 0px -33px 25px -30px @grey-4;
+                        /* Firefox 3.5 - 3.6 */
+                        box-shadow: inset 0px -33px 25px -30px @grey-4;
+
+                        &.ant-tabs-tab-active {
+                            background: @grey-1;
+                            height: 50px;
+                            font-size: 17px;
+
+                            -webkit-box-shadow: 0px 6px 10px -4px @grey-7;
+                            /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+                            -moz-box-shadow: 0px 6px 10px -4px @grey-7;
+                            /* Firefox 3.5 - 3.6 */
+                            box-shadow: 0px 6px 10px -4px @grey-7;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ant-card-body {
+            height: calc(100% - 80px);
+            width: 100%;
+
+            padding: 25px 40px;
+
+            background: @grey-1;
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            -webkit-box-shadow: 0px 6px 10px -4px @grey-7;
+            /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+            -moz-box-shadow: 0px 6px 10px -4px @grey-7;
+            /* Firefox 3.5 - 3.6 */
+            box-shadow: 0px 6px 10px -4px @grey-7;
+        }
+    }
+}
