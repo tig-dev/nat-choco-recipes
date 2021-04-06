@@ -15,6 +15,11 @@ const reference_list = [
     source: "https://img0.etsystatic.com/041/0/8340085/il_570xN.607418912_f3s6.jpg",
     type: "Image",
   },
+  {
+    name: "Rigó Jancsi recipe & image",
+    source: "https://www.tasteatlas.com/rigo-jancsi/recipe",
+    type: "Recipe & image",
+  },
 ];
 
 export default reference_list;

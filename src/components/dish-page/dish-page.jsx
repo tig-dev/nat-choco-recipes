@@ -62,9 +62,16 @@ const DishPage = ({ currDish }) => {
             onChange={(activeKey) => setCurrTab(activeKey)}
           >
             <TabPane tab="Information" key="info" />
-            <TabPane tab="Recipe" key="recipe" />
-            <TabPane tab="History" key="history" />
-            <TabPane tab="Analyses" key="analysis" />
+            {!isEmpty(currDish.obj.steps) &&
+              !isEmpty(currDish.obj.ingredients) && (
+                <TabPane tab="Recipe" key="recipe" />
+              )}
+            {!isEmpty(currDish.obj.history) && (
+              <TabPane tab="History" key="history" />
+            )}
+            {!isEmpty(currDish.obj.analysis) && (
+              <TabPane tab="Analyses" key="analysis" />
+            )}
           </Tabs>
         }
         className="dish-tab-content"
