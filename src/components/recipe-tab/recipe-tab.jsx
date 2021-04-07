@@ -21,7 +21,7 @@ const RecipeTab = ({ currDish }) => {
                 bordered={true}
                 dataSource={
                   keys(currDish.obj.ingredients).length === 1
-                    ? currDish.obj.ingredients
+                    ? currDish.obj.ingredients[keys(currDish.obj.ingredients)[0]]
                     : map(currDish.obj.ingredients, (list, key) => {
                         return {
                           name: key,
