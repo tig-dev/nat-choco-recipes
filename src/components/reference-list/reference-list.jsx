@@ -64,7 +64,9 @@ const ReferenceList = () => {
         <Column
           title=""
           width="5%"
-          render={(value, record, index) => index + 1}
+          render={(value, record, index) => (
+            <div id={`${index}`}>{index + 1}</div>
+          )}
         />
         <Column
           title="Works Cited"

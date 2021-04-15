@@ -18,6 +18,41 @@
     font-family: @body-font;
 }
 
+
+.source-ribbon {
+    height: 26px;
+
+    &,
+    .ant-ribbon-text {
+
+        &,
+        >a,
+        >div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .source-ribbon-text {
+        color: #fff;
+        font-family: @header-font;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 18px;
+
+        &.anticon {
+            height: 18px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
 #main {
     height: calc(100vh - 30px);
     width: 100vw;
@@ -172,7 +207,7 @@
 
         padding: 5px;
 
-        > * {
+        >* {
             border-radius: 10px;
         }
 

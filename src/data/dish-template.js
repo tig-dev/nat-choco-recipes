@@ -3,6 +3,11 @@ const template = {
   country: "",
   origin: "",
   thumbnail: "",
+  thumbnailLink: "",
+  recipeSource: {
+    name: "",
+    link: ""
+  },
   ingredients: {
     main: [
       {
