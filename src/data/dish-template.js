@@ -15,6 +15,7 @@ const template = {
   shortDescription: "",
   description: "",
   history: "",
+  references: []
 };
 
 export default template;

@@ -109,6 +109,7 @@ const MolePoblano = {
   history:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris a diam maecenas sed enim ut sem. Scelerisque fermentum dui faucibus in ornare quam viverra orci. Fermentum posuere urna nec tincidunt. Tincidunt arcu non sodales neque. Gravida quis blandit turpis cursus in. Amet consectetur adipiscing elit duis tristique. Id aliquet lectus proin nibh. Amet consectetur adipiscing elit pellentesque habitant morbi tristique. Quis hendrerit dolor magna eget est lorem ipsum dolor.<br />Bibendum arcu vitae elementum curabitur vitae nunc. Auctor eu augue ut lectus. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Odio ut sem nulla pharetra. Vel quam elementum pulvinar etiam non quam lacus suspendisse. Mauris commodo quis imperdiet massa. Fermentum dui faucibus in ornare quam viverra orci sagittis. Purus ut faucibus pulvinar elementum integer enim neque volutpat ac. Parturient montes nascetur ridiculus mus mauris vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. Sit amet nulla facilisi morbi. Ut morbi tincidunt augue interdum velit euismod. Donec pretium vulputate sapien nec sagittis aliquam malesuada.<br />Venenatis tellus in metus vulputate eu scelerisque felis. Enim nec dui nunc mattis enim. In mollis nunc sed id semper risus in hendrerit gravida. Viverra vitae congue eu consequat ac felis. Lacus viverra vitae congue eu consequat ac felis donec. Dolor morbi non arcu risus quis varius quam quisque id. Viverra nam libero justo laoreet sit amet cursus sit. Quam viverra orci sagittis eu volutpat odio facilisis. Sociis natoque penatibus et magnis dis parturient montes. Blandit aliquam etiam erat velit scelerisque in.",
   analysis: "",
+  references: [1]
 };
 
 const RigoJancsi = {
@@ -197,10 +198,11 @@ const RigoJancsi = {
     "To make the filling, soak the gelatine in water for 5 minutes. Mix the powdered sugar with cocoa. Beat the whipping cream and then mix it well with the gelatine, adding the dry ingredients and vanilla extract. Mix until well incorporated.",
     "Evenly spread the filling over the bottom sponge and then finish the cake by assembling the ganache-glazed sponge squares on top of the filling. Refrigerate until the filling is set. Slice the cubes just before serving.",
   ],
-  shortDescription: "",
-  description: "",
+  shortDescription: "A multi-layer cake: rich chocolate whipped cream sandwiched between two layers of chocolate cake, topped off with a chocolate ganache.",
+  description: "Rigó Jancsi is a traditional Hungarian torte. A fluffy chocolate mousse, with or without rum, is wrapped in two layers of chocolate sponge cake. Then, the stack is topped with a glaze and/or a dark chocolate ganache, depending on where the source of the recipe.<br />Once baked, Rigó Jancsi is traditionally cube-shaped, but can be cut into any shape desired.",
   history: "",
   analysis: "",
+  references: [0,3]
 };
 
 const Cannelloni = {
@@ -219,6 +221,7 @@ const Cannelloni = {
   description: "",
   history: "Traditionally served on Saint Stephen's day.",
   analysis: "",
+  references: []
 };
 
 export { MolePoblano, RigoJancsi, Cannelloni };

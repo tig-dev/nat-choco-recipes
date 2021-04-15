@@ -1,25 +1,16 @@
-export const refence_template = {
-  name: "",
-  source: "",
-  type: "",
-};
+const link_template = (link) => `<<a href=${link}>${link}</a>>`;
 
 const reference_list = [
-  {
-    name: "Mole Poblano Image",
-    source: "https://www.thespruceeats.com/authentic-mole-poblano-recipe-2314013",
-    type: "Image",
-  },
-  {
-    name: "Lavender Gingham image",
-    source: "https://img0.etsystatic.com/041/0/8340085/il_570xN.607418912_f3s6.jpg",
-    type: "Image",
-  },
-  {
-    name: "Rigó Jancsi recipe & image",
-    source: "https://www.tasteatlas.com/rigo-jancsi/recipe",
-    type: "Recipe & image",
-  },
+  `"Authentic Rigó Jancsi recipe." <i>tasteatlas</i>. Web. ${link_template(
+    "https://www.tasteatlas.com/rigo-jancsi/recipe"
+  )}.`,
+  `Gerrard, Gene. "Authentic Mole Poblano." 07/19/19 07/19/19. Web. ${link_template(
+    "https://www.thespruceeats.com/authentic-mole-poblano-recipe-2314013"
+  )}.`,
+  `"Heberle, Marianna Olszewska. <i>Polish Cooking</i>. HP Trade, 1987. Print.`,
+  `Pinel, Florian. "Rigó Jancsi: the Princess, the Fiddler, and the Cake." <i>Food Perestroika</i>. November 22, 2019. Web. ${link_template(
+    "https://foodperestroika.com/2019/11/22/rigo-jancsi-the-princess-the-fiddler-and-the-cake/"
+  )}.`,
 ];
 
 export default reference_list;
