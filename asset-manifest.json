@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/nat-choco-recipes/static/css/main.1e82b83e.chunk.css",
-    "main.js": "/nat-choco-recipes/static/js/main.9cb6e250.chunk.js",
-    "main.js.map": "/nat-choco-recipes/static/js/main.9cb6e250.chunk.js.map",
+    "main.js": "/nat-choco-recipes/static/js/main.48817b33.chunk.js",
+    "main.js.map": "/nat-choco-recipes/static/js/main.48817b33.chunk.js.map",
     "runtime-main.js": "/nat-choco-recipes/static/js/runtime-main.494153aa.js",
     "runtime-main.js.map": "/nat-choco-recipes/static/js/runtime-main.494153aa.js.map",
-    "static/css/2.c78f161c.chunk.css": "/nat-choco-recipes/static/css/2.c78f161c.chunk.css",
+    "static/css/2.8a5d0c59.chunk.css": "/nat-choco-recipes/static/css/2.8a5d0c59.chunk.css",
     "static/js/2.0afd25e1.chunk.js": "/nat-choco-recipes/static/js/2.0afd25e1.chunk.js",
     "static/js/2.0afd25e1.chunk.js.map": "/nat-choco-recipes/static/js/2.0afd25e1.chunk.js.map",
     "static/js/3.a23dc184.chunk.js": "/nat-choco-recipes/static/js/3.a23dc184.chunk.js",
     "static/js/3.a23dc184.chunk.js.map": "/nat-choco-recipes/static/js/3.a23dc184.chunk.js.map",
     "index.html": "/nat-choco-recipes/index.html",
-    "static/css/2.c78f161c.chunk.css.map": "/nat-choco-recipes/static/css/2.c78f161c.chunk.css.map",
+    "static/css/2.8a5d0c59.chunk.css.map": "/nat-choco-recipes/static/css/2.8a5d0c59.chunk.css.map",
     "static/css/main.1e82b83e.chunk.css.map": "/nat-choco-recipes/static/css/main.1e82b83e.chunk.css.map",
     "static/js/2.0afd25e1.chunk.js.LICENSE.txt": "/nat-choco-recipes/static/js/2.0afd25e1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.494153aa.js",
-    "static/css/2.c78f161c.chunk.css",
+    "static/css/2.8a5d0c59.chunk.css",
     "static/js/2.0afd25e1.chunk.js",
     "static/css/main.1e82b83e.chunk.css",
-    "static/js/main.9cb6e250.chunk.js"
+    "static/js/main.48817b33.chunk.js"
   ]
 }
