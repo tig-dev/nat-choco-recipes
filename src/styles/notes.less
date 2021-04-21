@@ -1,18 +1,22 @@
 @import './app.less';
 @import './colors.less';
 
-.history-tab {
+.notes-tab {
     max-height: 100%;
     overflow-y: auto;
-    font-size: 16px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
-    .history-descriptions {
+    .notes-descriptions {
         width: 99%;
+
+        .notes-desc-header {
+            font-weight: 600;
+            font-size: 20px;
+        }
 
         th {
             font-weight: 600;
@@ -21,8 +25,15 @@
         }
 
         td {
-            font-size: 16px;
-            text-indent: 25px;
+            padding: 0;
+
+            .ant-list {
+                font-size: 16px;
+            }
+
+            .ant-list-item {
+                padding: 12px 24px;
+            }
         }
     }
 }

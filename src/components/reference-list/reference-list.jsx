@@ -1,5 +1,5 @@
 import { Button, List, Table } from "antd";
-import { lowerCase, filter, indexOf, kebabCase } from "lodash";
+import { lowerCase, filter, indexOf, kebabCase, uniq, cloneDeep } from "lodash";
 import { useHistory } from "react-router";
 
 import "../../styles/reference-list.less";
@@ -10,8 +10,9 @@ const { Column } = Table;
 
 const ReferenceList = () => {
   const history = useHistory();
-  let data = reference_list;
-  data.sort((a, b) => lowerCase(a) - lowerCase(b));
+  let data = cloneDeep(reference_list);
+  data = data.sort((a, b) => lowerCase(a) - lowerCase(b));
+  data = uniq(data);
 
   return (
     <div className="reference-list header-font">
@@ -65,11 +66,12 @@ const ReferenceList = () => {
           title=""
           width="5%"
           render={(value, record, index) => (
-            <div id={`${index}`}>{index + 1}</div>
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            <a id={`#${index}`}>{index + 1}</a>
           )}
         />
         <Column
-          title="Works Cited"
+          title="References"
           render={(record) => (
             <div dangerouslySetInnerHTML={{ __html: record }} />
           )}

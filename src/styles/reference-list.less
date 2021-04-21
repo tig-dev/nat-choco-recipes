@@ -16,11 +16,26 @@
             font-size: 16px;
         }
 
+
+        .ant-table {
+            border-radius: 10px;
+        }
+
+        .ant-table-thead>tr>th {
+            &:first-child {
+                border-top-left-radius: 10px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 10px;
+            }
+        }
+
         .used-in-list-row {
             td {
                 padding: 5px;
             }
-            
+
             .used-in-list {
                 margin-left: 75px;
                 background: @grey-1;

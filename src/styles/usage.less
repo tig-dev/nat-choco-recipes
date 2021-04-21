@@ -1,0 +1,88 @@
+@import "./colors.less";
+
+.usage-page {
+    height: 100%;
+    width: 70%;
+
+
+    .usage-tab-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background: transparent;
+
+        .ant-card-body {
+            padding: 0;
+        }
+
+        .ant-card-body,
+        .ant-collapse {
+            border-radius: 10px;
+        }
+
+        .ant-collapse-item:last-child.ant-collapse-item-active .ant-collapse-content {
+            border-radius: 0 0 10px 10px;
+        }
+
+        .ant-collapse-content-box {
+            padding: 0;
+
+            .ant-descriptions-bordered .ant-descriptions-view {
+                border: none;
+            }
+
+            .ant-descriptions table {
+                th {
+                    font-family: 'Raleway';
+                    font-size: 16px;
+                    width: 30%;
+                }
+
+                td,
+                .ant-list,
+                .ant-spin-nested-loading,
+                .ant-spin-container {
+                    min-height: 350px;
+                }
+
+                .ant-descriptions-item-content {
+                    padding: 0;
+                    width: 30%;
+
+                    .ant-list-item {
+                        font-size: 16px;
+                        padding: 12px 24px;
+                        min-height: 33%;
+
+                        .dish-link {
+                            color: @blue-6;
+
+                            &:hover {
+                                cursor: pointer;
+                                color: @blue-5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .ant-collapse-header {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1;
+            font-family: 'Raleway';
+            padding: 20px 25px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .ant-collapse-arrow {
+                position: initial;
+                padding: 0;
+                margin-right: 15px;
+            }
+        }
+    }
+}

@@ -67,9 +67,13 @@ const RecipeTab = ({ currDish }) => {
                             name: key,
                             amount: "",
                             children: list,
+                            expand: true,
                           };
                         })
                   }
+                  expandable={{
+                    rowExpandable: (record) => record.expand,
+                  }}
                   rowKey="name"
                   pagination={false}
                   size="small"
@@ -78,30 +82,67 @@ const RecipeTab = ({ currDish }) => {
                     key="name"
                     dataIndex="name"
                     title="Name"
-                    render={(value) => startCase(value)}
+                    // using code from https://stackoverflow.com/a/58254980
+                    render={(value, record) =>
+                      record.optional
+                        ? `${value.replace(/(^\w{1})|(\s{1}\w{1})/g, (match) =>
+                            match.toUpperCase()
+                          )} (optional)`
+                        : value.replace(/(^\w{1})|(\s{1}\w{1})/g, (match) =>
+                            match.toUpperCase()
+                          )
+                    }
                   />
-                  <Column key="amount" dataIndex="amount" title="Quantity" />
+                  <Column
+                    key="amount"
+                    dataIndex="amount"
+                    title="Quantity"
+                    className="quantity-col"
+                  />
                 </Table>
               }
             />
           </div>
-          <div className="recipe-steps">
-            <List
-              className="steps-header header-font"
-              header="Steps"
-              children={
-                <Steps direction="vertical">
-                  {map(currDish.obj.steps, (step, key) => (
-                    <Step
-                      title={step}
-                      status="process"
-                      key={`${kebabCase(currDish.name)}-${key}`}
-                    />
-                  ))}
-                </Steps>
-              }
-            />
-          </div>
+          {keys(currDish.obj.steps).includes("main") ? (
+            <div className="recipe-steps">
+              <List
+                className="steps-header header-font"
+                header="Steps"
+                children={
+                  <Steps direction="vertical">
+                    {map(currDish.obj.steps.main, (step, key) => (
+                      <Step
+                        title={step}
+                        status="process"
+                        key={`${kebabCase(currDish.name)}-${key}`}
+                      />
+                    ))}
+                  </Steps>
+                }
+              />
+            </div>
+          ) : (
+            <div className="recipe-steps">
+              {map(currDish.obj.steps, (group, key) => (
+                <List
+                  className="steps-header header-font"
+                  header={`Steps - ${startCase(key)}`}
+                  key={key}
+                  children={
+                    <Steps direction="vertical">
+                      {map(group, (step, key) => (
+                        <Step
+                          title={step}
+                          status="process"
+                          key={`${kebabCase(currDish.name)}-${key}`}
+                        />
+                      ))}
+                    </Steps>
+                  }
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </Ribbon>

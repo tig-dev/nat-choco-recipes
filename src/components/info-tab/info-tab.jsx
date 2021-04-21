@@ -1,6 +1,6 @@
 import { Descriptions, Badge, Tooltip } from "antd";
 import { ReadOutlined } from "@ant-design/icons";
-import { map } from "lodash";
+import { isEmpty, map } from "lodash";
 
 import "../../styles/info.less";
 
@@ -40,19 +40,20 @@ const InfoTab = ({ currDish }) => (
           >
             <img src={`${currDish.obj.thumbnail}`} alt={`${currDish.name}`} />
           </Ribbon>
-          <div
-            className="info-text"
-            dangerouslySetInnerHTML={{
-              __html: currDish.obj.shortDescription,
-            }}
-          />
+          <div className="info-text">
+            {map(currDish.obj.description.split("<br />"), (paragraph) => (
+              <div dangerouslySetInnerHTML={{ __html: paragraph }} />
+            ))}
+          </div>
         </div>
       </Item>
-      <Item label="More Information">
-        {map(currDish.obj.description.split("<br />"), (paragraph) => (
-          <div dangerouslySetInnerHTML={{ __html: paragraph }} />
-        ))}
-      </Item>
+      {!isEmpty(currDish.obj.history) && (
+        <Item label="History">
+          {map(currDish.obj.history.split("<br />"), (paragraph) => (
+            <div dangerouslySetInnerHTML={{ __html: paragraph }} />
+          ))}
+        </Item>
+      )}
     </Descriptions>
   </div>
 );

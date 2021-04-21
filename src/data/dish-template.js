@@ -16,10 +16,10 @@ const template = {
       },
     ],
   },
-  steps: [],
-  shortDescription: "",
+  steps: {main:[],},
   description: "",
   history: "",
+  notes: [],
   references: []
 };
 

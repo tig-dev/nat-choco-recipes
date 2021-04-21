@@ -8,8 +8,16 @@ import {
   PushpinFilled,
   ReadFilled,
   UnorderedListOutlined,
+  AppstoreFilled
 } from "@ant-design/icons";
-import { isNil, map, kebabCase, isEmpty, endsWith } from "lodash";
+import {
+  isNil,
+  map,
+  kebabCase,
+  isEmpty,
+  endsWith,
+  cloneDeep,
+} from "lodash";
 
 import "../../styles/app.less";
 import { getDish } from "../../data/dish-list";
@@ -27,6 +35,9 @@ const App = ({ Child = null }) => {
   const history = useHistory();
   const { dish = "" } = useParams();
 
+  let sortedList = cloneDeep(dishList);
+  sortedList.sort((a, b) => a.name - b.name);
+
   useEffect(() => {
     if (dish) {
       let tempDish = getDish(dish);
@@ -37,7 +48,10 @@ const App = ({ Child = null }) => {
   }, [dish]);
 
   const childContent = useMemo(() => {
-    if (endsWith(history.location.pathname, "references")) {
+    if (
+      endsWith(history.location.pathname, "references") ||
+      endsWith(history.location.pathname, "usage")
+    ) {
       return <Child />;
     } else if (!isEmpty(dish) && !isNil(currDish)) {
       return <Child currDish={currDish} />;
@@ -45,7 +59,7 @@ const App = ({ Child = null }) => {
       return (
         <div className={"recipe-grid-wrapper"}>
           <div className={"app-recipe-grid"}>
-            {map(dishList, (dish) => {
+            {map(sortedList, (dish) => {
               return (
                 <Card
                   hoverable
@@ -62,7 +76,7 @@ const App = ({ Child = null }) => {
                     ></div>
                   }
                 >
-                  <Card.Meta title={dish.name} />
+                  <Card.Meta title={dish.name} description={dish.obj.country} />
                 </Card>
               );
             })}
@@ -71,7 +85,7 @@ const App = ({ Child = null }) => {
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [history.location, history, currDish, dish]);
+  }, [history.location, history, currDish, dish, sortedList]);
 
   return (
     <Layout>
@@ -108,6 +122,17 @@ const App = ({ Child = null }) => {
               Home
             </Item>
             <Item
+              key="usage-link"
+              icon={<AppstoreFilled />}
+              onClick={() => {
+                setCurrDish(undefined);
+                history.push("/usage");
+                setSiderCollapsed(true);
+              }}
+            >
+              Chocolate Usage
+            </Item>
+            <Item
               key="references-link"
               icon={<ReadFilled />}
               onClick={() => {
@@ -123,7 +148,7 @@ const App = ({ Child = null }) => {
               title="Dishes"
               icon={<UnorderedListOutlined />}
             >
-              {map(dishList, (dish) => (
+              {map(sortedList, (dish) => (
                 <Item
                   key={`${kebabCase(dish.name)}-link`}
                   icon={<PushpinFilled />}
@@ -140,11 +165,11 @@ const App = ({ Child = null }) => {
         </Sider>
         <Layout className="app-layout">
           <Header className="app-header header-font">
-            {isNil(currDish)
-              ? endsWith(history.location.pathname, "references")
-                ? "Reference List"
-                : "National Chocolate Recipies"
-              : currDish.name}
+            {endsWith(history.location.pathname, "references")
+              ? "References"
+              : endsWith(history.location.pathname, "usage")
+              ? "Chocolate Usage"
+              : "Chocolate Dishes Around the World"}
           </Header>
           <Content
             className="app-content body-font"

@@ -4,8 +4,7 @@ import { isEmpty } from "lodash";
 import { Tabs, Card } from "antd";
 
 import "../../styles/dish.less";
-import AnalysisTab from "../analysis-tab/analysis-tab";
-import HistoryTab from "../history-tab/history-tab";
+import NotesTab from "../notes-tab/notes-tab";
 import InfoTab from "../info-tab/info-tab";
 import RecipeTab from "../recipe-tab/recipe-tab";
 
@@ -35,11 +34,8 @@ const DishPage = ({ currDish }) => {
       case "recipe": {
         return <RecipeTab currDish={currDish} />;
       }
-      case "history": {
-        return <HistoryTab currDish={currDish} />;
-      }
-      case "analysis": {
-        return <AnalysisTab currDish={currDish} />;
+      case "notes": {
+        return <NotesTab currDish={currDish} />;
       }
       default: {
         return <InfoTab currDish={currDish} />;
@@ -62,16 +58,13 @@ const DishPage = ({ currDish }) => {
             onChange={(activeKey) => setCurrTab(activeKey)}
           >
             <TabPane tab="Information" key="info" />
+            {!isEmpty(currDish.obj.notes) && (
+              <TabPane tab="Notes" key="notes" />
+            )}
             {!isEmpty(currDish.obj.steps) &&
               !isEmpty(currDish.obj.ingredients) && (
                 <TabPane tab="Recipe" key="recipe" />
               )}
-            {!isEmpty(currDish.obj.history) && (
-              <TabPane tab="History" key="history" />
-            )}
-            {!isEmpty(currDish.obj.analysis) && (
-              <TabPane tab="Analyses" key="analysis" />
-            )}
           </Tabs>
         }
         className="dish-tab-content"
