@@ -11,18 +11,18 @@ const Routes = () => (
       <Route exact path={["/nat-choco-recipes/", "/"]}>
         <App />
       </Route>
-      <Route path={["nat-choco-recipes/references", "/references"]}>
+      <Route path={["/nat-choco-recipes/references", "/references"]}>
         <App Child={ReferenceList} />
       </Route>
-      <Route path={["nat-choco-recipes/usage", "/usage"]}>
+      <Route path={["/nat-choco-recipes/usage", "/usage"]}>
         <App Child={ChocolateUsage} />
       </Route>
       <Route
         path={[
-          "/nat-choco-recipes/:dish/:tab",
-          "/nat-choco-recipes/:dish",
-          "/:dish/:tab",
-          "/:dish",
+          "/nat-choco-recipes/dish/:dish/:tab",
+          "/nat-choco-recipes/dish/:dish",
+          "/dish/:dish/:tab",
+          "/dish/:dish",
         ]}
       >
         <App Child={DishPage} />

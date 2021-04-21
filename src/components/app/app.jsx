@@ -8,16 +8,9 @@ import {
   PushpinFilled,
   ReadFilled,
   UnorderedListOutlined,
-  AppstoreFilled
+  AppstoreFilled,
 } from "@ant-design/icons";
-import {
-  isNil,
-  map,
-  kebabCase,
-  isEmpty,
-  endsWith,
-  cloneDeep,
-} from "lodash";
+import { isNil, map, kebabCase, isEmpty, endsWith, cloneDeep } from "lodash";
 
 import "../../styles/app.less";
 import { getDish } from "../../data/dish-list";
@@ -64,7 +57,9 @@ const App = ({ Child = null }) => {
                 <Card
                   hoverable
                   key={`${kebabCase(dish.name)}-card`}
-                  onClick={() => history.push(`/nat-choco-recipes/${kebabCase(dish.name)}`)}
+                  onClick={() =>
+                    history.push(`/nat-choco-recipes/dish/${kebabCase(dish.name)}`)
+                  }
                   cover={
                     <div
                       className="recipe-grid-image"
@@ -153,7 +148,7 @@ const App = ({ Child = null }) => {
                   key={`${kebabCase(dish.name)}-link`}
                   icon={<PushpinFilled />}
                   onClick={() => {
-                    history.push(`/nat-choco-recipes/${kebabCase(dish.name)}`);
+                    history.push(`/nat-choco-recipes/dish/${kebabCase(dish.name)}`);
                     setSiderCollapsed(true);
                   }}
                 >
