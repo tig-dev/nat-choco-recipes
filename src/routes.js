@@ -8,21 +8,21 @@ import ReferenceList from "./components/reference-list/reference-list";
 const Routes = () => (
   <Router>
     <Switch>
-      <Route exact path={["/", "/nat-choco-recipes/"]}>
+      <Route exact path={["/nat-choco-recipes/", "/"]}>
         <App />
       </Route>
-      <Route path={["/references", "/nat-choco-recipes/references"]}>
+      <Route path={["nat-choco-recipes/references", "/references"]}>
         <App Child={ReferenceList} />
       </Route>
-      <Route path={["/usage", "/nat-choco-recipes/usage"]}>
+      <Route path={["nat-choco-recipes/usage", "/usage"]}>
         <App Child={ChocolateUsage} />
       </Route>
       <Route
         path={[
-          "/:dish/:tab",
-          "/:dish",
           "/nat-choco-recipes/:dish/:tab",
           "/nat-choco-recipes/:dish",
+          "/:dish/:tab",
+          "/:dish",
         ]}
       >
         <App Child={DishPage} />
