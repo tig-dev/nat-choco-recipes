@@ -43,7 +43,7 @@ const ReferenceList = () => {
                   <Button
                     type="link"
                     onClick={() => {
-                      history.push(`/${kebabCase(item.name)}`);
+                      history.push(`/nat-choco-recipes/${kebabCase(item.name)}`);
                     }}
                   >
                     {item.name}

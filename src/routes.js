@@ -5,20 +5,26 @@ import ChocolateUsage from "./components/chocolate-usage/chocolate-usage";
 import DishPage from "./components/dish-page/dish-page";
 import ReferenceList from "./components/reference-list/reference-list";
 
-// TODO: Update App instances with appropriate child components as added
 const Routes = () => (
   <Router>
     <Switch>
-      <Route exact path="/">
+      <Route exact path={["/", "/nat-choco-recipes/"]}>
         <App />
       </Route>
-      <Route path="/references">
+      <Route path={["/references", "/nat-choco-recipes/references"]}>
         <App Child={ReferenceList} />
       </Route>
-      <Route path="/usage">
+      <Route path={["/usage", "/nat-choco-recipes/usage"]}>
         <App Child={ChocolateUsage} />
       </Route>
-      <Route path={["/:dish/:tab", "/:dish"]}>
+      <Route
+        path={[
+          "/:dish/:tab",
+          "/:dish",
+          "/nat-choco-recipes/:dish/:tab",
+          "/nat-choco-recipes/:dish",
+        ]}
+      >
         <App Child={DishPage} />
       </Route>
     </Switch>

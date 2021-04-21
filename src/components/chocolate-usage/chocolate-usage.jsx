@@ -72,7 +72,7 @@ const ChocolateUsage = () => {
                     such as{" "}
                     <span
                       className="dish-link"
-                      onClick={() => history.push("/mole-poblano")}
+                      onClick={() => history.push("/nat-choco-recipes/mole-poblano")}
                     >
                       Mole Poblano
                     </span>
@@ -111,7 +111,7 @@ const ChocolateUsage = () => {
                       className="dish-link"
                       onClick={() =>
                         history.push(
-                          `/references#${getRefIndexBySubstring("Segan")}`
+                          `/nat-choco-recipes/references#${getRefIndexBySubstring("Segan")}`
                         )
                       }
                     >

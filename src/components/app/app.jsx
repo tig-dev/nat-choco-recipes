@@ -64,7 +64,7 @@ const App = ({ Child = null }) => {
                 <Card
                   hoverable
                   key={`${kebabCase(dish.name)}-card`}
-                  onClick={() => history.push(`/${kebabCase(dish.name)}`)}
+                  onClick={() => history.push(`/nat-choco-recipes/${kebabCase(dish.name)}`)}
                   cover={
                     <div
                       className="recipe-grid-image"
@@ -115,7 +115,7 @@ const App = ({ Child = null }) => {
               icon={<HomeFilled />}
               onClick={() => {
                 setCurrDish(undefined);
-                history.push("/");
+                history.push("/nat-choco-recipes/");
                 setSiderCollapsed(true);
               }}
             >
@@ -126,7 +126,7 @@ const App = ({ Child = null }) => {
               icon={<AppstoreFilled />}
               onClick={() => {
                 setCurrDish(undefined);
-                history.push("/usage");
+                history.push("/nat-choco-recipes/usage");
                 setSiderCollapsed(true);
               }}
             >
@@ -137,7 +137,7 @@ const App = ({ Child = null }) => {
               icon={<ReadFilled />}
               onClick={() => {
                 setCurrDish(undefined);
-                history.push("/references");
+                history.push("/nat-choco-recipes/references");
                 setSiderCollapsed(true);
               }}
             >
@@ -153,7 +153,7 @@ const App = ({ Child = null }) => {
                   key={`${kebabCase(dish.name)}-link`}
                   icon={<PushpinFilled />}
                   onClick={() => {
-                    history.push(`/${kebabCase(dish.name)}`);
+                    history.push(`/nat-choco-recipes/${kebabCase(dish.name)}`);
                     setSiderCollapsed(true);
                   }}
                 >
